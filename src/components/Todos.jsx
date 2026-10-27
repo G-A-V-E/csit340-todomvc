@@ -23,6 +23,10 @@ function Todos() {
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     )
+  }
+ 
+  function handleDelete(id) {
+    setTodos(todos.filter((todo) => todo.id !== id))
 }
 
   return (
@@ -59,7 +63,7 @@ function Todos() {
               <input
                 type="checkbox"
                   checked={todo.completed}
-                  readOnly
+                  onChange={() => handleToggle(todo.id)}
                 className="ml-[15px] size-[30px] shrink-0 cursor-pointer accent-[#59a193]"
               />
                 <span
