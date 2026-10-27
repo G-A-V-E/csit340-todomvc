@@ -125,9 +125,15 @@ function handleClearCompleted() {
               </button>
             </li>
           </ul>
-          <button type="button" className="cursor-pointer justify-self-end hover:underline">
-            Clear completed
-          </button>
+        {completedCount > 0 && (
+              <button
+                type="button"
+                onClick={handleClearCompleted}
+                className="cursor-pointer justify-self-end hover:underline"
+              >
+                Clear completed
+              </button>
+            )}
         </footer>
           </>
         )}
